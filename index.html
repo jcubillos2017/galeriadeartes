@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Arte</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+
+        /*aqui va los Estilos CSS*/
+
+        :root {
+            /* CSS HEX */
+            --plum: rgba(18, 1, 13, 0.34);
+            --taupe-gray: rgba(17, 26, 175, 0.34);
+            --cambridge-blue: #88a096ff;
+            --khaki: #bbab8bff;
+            --coral-pink: #ffffff;
+        }
+
+        body { font-family: Arial, sans-serif; background: var(--taupe-gray); }
+        .navbar { display: flex; justify-content: space-around; padding: 1rem; background-color: var(--plum); }
+        .navbar a { color: var(--coral-pink); text-decoration: none; }
+        .container { padding: 2rem; background: var(--cambridge-blue); }
+        .gallery { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .gallery img { width: 100%; max-width: 300px; }
+        .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+        .contact-form input, .contact-form textarea { padding: 0.5rem; background: var(--khaki); }
+        .contact-form button { padding: 1rem; background-color: var(--coral-pink); color: white; border: none; cursor: pointer; }
+        .section { display: none; } /* Inicialmente todas las secciones están ocultas */
+    </style>
+    </head>
+<body>
+<!-- <header> -->
+  <!-- <h1>Bienvenido a nuestra Galería de Arte</h1> -->
+
+    <!-- Navegacion -->
+
+    <nav class="navbar">
+            <a href="#inicio" onclick="showSection('inicio')">Inicio</a>
+            <a href="#galeria"onclick="showSection('galeria')">Galeria</a>
+            <a href="#contacto"onclick="showSection('contacto')">Contacto</a>
+    </nav>
+<!-- </header> -->
+
+<!-- Seccion de inicio -->
+
+<div id="inicio" class="section container">
+    <h1>¡Perrita de Mi Vida!</h1>
+    <p>Te Amo Con Toda el Alma, al Infinito y mas alla.</p>
+</div>
+
+<!-- Galeria de Fotos-->
+
+<div id="galeria" class="section container">
+    <h2>Galería de Fotos</h2>
+    <div class="gallery">
+
+        <!-- Aqui irian las imagenes con sus respectivos <img> tag -->
+
+        <img src="imagen1.jpg" alt="Obra de arte 1">
+        <img src="imagen2.jpg" alt="Obra de arte 2">
+        <img src="imagen3.jpg" alt="Obra de arte 3">
+        <img src="imagen4.jpg" alt="Obra de arte 4">
+        <!-- Agrega más imágenes según sea necesario -->
+    </div>
+</div>
+
+<!-- Seleccion de Contacto tambien se modifica el box -->
+
+<div id="contacto" class="section container">
+    <h2>Contacto</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Nombre">
+        <input type="email" placeholder="Correo electrónico">
+        <textarea placeholder="Tu mensaje"></textarea>
+        <button type="submit">Enviar Mensaje</button>
+    </form>
+</div>
+
+<!-- <footer> -->
+   <!-- <p>&copy; 2024 Galería de Arte. Todos los derechos reservados.</p> -->
+<!-- </footer> -->
+
+<script>
+
+    // Funcion para mostrar la seccion seleccionada y oculta las demas
+    function showSection(sectionId) {
+        //Ocultar todas las secciones
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(function(section) {
+            section.style.display = 'none';
+        });
+        //Mostrar la seccion seleccionada
+        document.getElementById(sectionId).style.display = 'block';
+    }
+
+    // Mostrar la seccion de inicio por defecto al cargar la pagina
+    window.onload = function() {
+        showSection('inicio');
+    };
+
+</script>
+
+</body>
+</html>
