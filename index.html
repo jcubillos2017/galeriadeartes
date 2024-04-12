@@ -4,103 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de Arte</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <style>
+        <style>
 
-        /*aqui va los Estilos CSS*/
+        /*----------------------------aqui va los Estilos CSS--------------------------------------------------------*/
 
         :root {
-            /* CSS HEX */
+            /* --------------------------------------CSS HEX --------------------------------------------------------*/
             --plum: rgba(18, 1, 13, 0.34);
             --taupe-gray: rgba(17, 26, 175, 0.34);
             --cambridge-blue: #88a096ff;
             --khaki: #bbab8bff;
-            --coral-pink: #ffffff;
+            --coral-pink: #551515;
         }
 
         body { font-family: Arial, sans-serif; background: var(--taupe-gray); }
         .navbar { display: flex; justify-content: space-around; padding: 1rem; background-color: var(--plum); }
         .navbar a { color: var(--coral-pink); text-decoration: none; }
         .container { padding: 2rem; background: var(--cambridge-blue); }
-        .gallery { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .gallery { display: flex; flex-wrap: wrap; }
         .gallery img { width: 100%; max-width: 300px; }
         .contact-form { display: flex; flex-direction: column; gap: 1rem; }
         .contact-form input, .contact-form textarea { padding: 0.5rem; background: var(--khaki); }
         .contact-form button { padding: 1rem; background-color: var(--coral-pink); color: white; border: none; cursor: pointer; }
         .section { display: none; } /* Inicialmente todas las secciones están ocultas */
     </style>
-    </head>
+</head>
 <body>
-<!-- <header> -->
-  <!-- <h1>Bienvenido a nuestra Galería de Arte</h1> -->
 
-    <!-- Navegacion -->
 
-    <nav class="navbar">
-            <a href="#inicio" onclick="showSection('inicio')">Inicio</a>
-            <a href="#galeria"onclick="showSection('galeria')">Galeria</a>
-            <a href="#contacto"onclick="showSection('contacto')">Contacto</a>
-    </nav>
-<!-- </header> -->
+<!-------------------------------------------- Navegacion---------------------------------------------------------- -->
 
-<!-- Seccion de inicio -->
+<nav class="navbar">
+    <a href="#inicio" onclick="showSection('inicio')">Inicio</a>
+    <a href="#galeria"onclick="showSection('galeria')">Galeria</a>
+    <a href="#contacto"onclick="showSection('contacto')">Contacto</a>
+</nav>
+<style>
+    .centrado {
+        text-align: center;
+    }
+    /*--------------------------------centrar imagen class center-----------------------------------------------------*/
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+</style>
+
+<!-- -------------------------------------Seccion de inicio--------------------------------------------------------- -->
 
 <div id="inicio" class="section container">
-    <h1>Bienvenido a nuestra Galería de Arte</h1>
-    <p>Bienvenido a nuestra galería de arte donde encontrarás una amplia selección de obras.</p>
+    <h1 class="centrado">Bienvenido a nuestra Galería de Arte</h1>
+    <p class="centrado">Bienvenido a nuestra galería de arte donde encontrarás una amplia selección de obras.</p>
+
+   <img src="imagen3.png" alt="Obra de arte 1" class="center">
+
 </div>
 
-<!-- Galeria de Fotos-->
+<!-- ------------------------------------------Galeria de Fotos-------------------------------------------------------->
 
 <div id="galeria" class="section container">
-    <h2>Galería de Fotos</h2>
+    <h2 class="centrado">Galería de Fotos</h2>
     <div class="gallery">
+
+        <html>
+        <head>
+            <style>
+                div.gallery img {
+                    border: 1px solid #ccc;
+                }
+
+                div.gallery:hover {
+                    border: 1px solid #777;
+                }
+
+                div.gallery img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                div.desc {
+                    padding: 15px;
+                    text-align: center;
+                }
+
+                * {
+                    box-sizing: border-box;
+                }
+
+                .responsive {
+                    padding: 0 6px;
+                    float: left;
+                    width: 24.99999%;
+                }
+
+                @media only screen and (max-width: 700px) {
+                    .responsive {
+                        width: 49.99999%;
+                        margin: 6px 0;
+                    }
+                }
+
+                @media only screen and (max-width: 500px) {
+                    .responsive {
+                        width: 100%;
+                    }
+                }
+
+                .clearfix:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+            </style>
+        </head>
+        <body>
+
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="img_5terre.jpg">
+                    <img src="img_5terre.jpg" alt="Cinque Terre" width="800" height="600">
+                </a>
+                <div class="desc">Manarola en Cinque Terre, Italia</div>
+            </div>
+        </div>
+
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="img_forest.jpg">
+                    <img src="img_forest.jpg" alt="Forest" width="600" height="400">
+                </a>
+                <div class="desc">Ingreso al Bosque</div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="img_lights.jpg">
+                    <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
+                </a>
+                <div class="desc">Aurora boreal, aurora boreal islandesa</div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="img_mountains.jpg">
+                    <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
+                </a>
+                <div class="desc">National Park, Lake Louise, Alberta, Canada, Canadian Rockies, Valley of the Ten Peaks, Mountains, Alpine - Etsy</div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div style="padding:6px;">
+            <p>Este ejemplo utiliza consultas de medios para reorganizar las imágenes en diferentes tamaños de pantalla: para pantallas de más de 700 px de ancho, mostrará cuatro imágenes una al lado de la otra, para pantallas de menos de 700 px, mostrará dos imágenes una al lado de la otra. Para pantallas de menos de 500 px, las imágenes se apilarán verticalmente (100 %).</p>
+            <p>Aprenderá más sobre consultas de medios y diseño web responsivo más adelante en nuestro Tutorial de CSS..</p>
+        </div>
+
+        </body>
+        </html>
 
         <!-- Aqui irian las imagenes con sus respectivos <img> tag -->
 
+        <!-- p
         <img src="imagen1.png" alt="Obra de arte 1">
         <img src="imagen2.png" alt="Obra de arte 2">
         <img src="imagen3.png" alt="Obra de arte 3">
         <img src="imagen4.png" alt="Obra de arte 4">
-        <!-- Agrega más imágenes según sea necesario -->
+        <img src="imagen5.png" alt="Obra de arte 5">
+        <img src="imagen6.png" alt="Obra de arte 6">
+        <img src="imagen7.png" alt="Obra de arte 7">
+        <img src="imagen8.png" alt="Obra de arte 8">
+        <img src="imagen9.png" alt="Obra de arte 9">
+        <img src="imagen10.png" alt="Obra de arte 10">
+        Agrega más imágenes según sea necesario -->
+        </div>
     </div>
-</div>
 
-<!-- Seleccion de Contacto tambien se modifica el box -->
+        <!-- Seleccion de Contacto tambien se modifica el box -->
 
-<div id="contacto" class="section container">
-    <h2>Contacto</h2>
-    <form class="contact-form">
-        <input type="text" placeholder="Nombre">
-        <input type="email" placeholder="Correo electrónico">
-        <textarea placeholder="Tu mensaje"></textarea>
-        <button type="submit">Enviar Mensaje</button>
-    </form>
-</div>
+        <div id="contacto" class="section container">
+            <h2>Contacto</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Correo electrónico">
+                <textarea placeholder="Tu mensaje"></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
 
-<!-- <footer> -->
-   <!-- <p>&copy; 2024 Galería de Arte. Todos los derechos reservados.</p> -->
-<!-- </footer> -->
 
 <script>
 
-    // Funcion para mostrar la seccion seleccionada y oculta las demas
-    function showSection(sectionId) {
-        //Ocultar todas las secciones
-        var sections = document.querySelectorAll('.section');
-        sections.forEach(function(section) {
-            section.style.display = 'none';
-        });
-        //Mostrar la seccion seleccionada
-        document.getElementById(sectionId).style.display = 'block';
-    }
+            // Funcion para mostrar la seccion seleccionada y oculta las demas
+            function showSection(sectionId) {
+                //Ocultar todas las secciones
+                var sections = document.querySelectorAll('.section');
+                sections.forEach(function(section) {
+                    section.style.display = 'none';
+                });
+                //Mostrar la seccion seleccionada
+                document.getElementById(sectionId).style.display = 'block';
+            }
 
-    // Mostrar la seccion de inicio por defecto al cargar la pagina
-    window.onload = function() {
-        showSection('inicio');
-    };
+            // Mostrar la seccion de inicio por defecto al cargar la pagina
+            window.onload = function() {
+                showSection('inicio');
+            };
 
-</script>
+        </script>
 
 </body>
 </html>
