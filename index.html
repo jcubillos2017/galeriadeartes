@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de Arte</title>
-        <style>
+    <style>
 
         /*----------------------------aqui va los Estilos CSS--------------------------------------------------------*/
 
@@ -58,7 +58,7 @@
     <h1 class="centrado">Bienvenido a nuestra Galería de Arte</h1>
     <p class="centrado">Bienvenido a nuestra galería de arte donde encontrarás una amplia selección de obras.</p>
 
-   <img src="imagen3.png" alt="Obra de arte 1" class="center">
+    <img src="imagen3.png" alt="Obra de arte 1" class="center">
 
 </div>
 
@@ -168,56 +168,49 @@
 
         </body>
         </html>
+       </div>
+</div>
 
-        <!-- Aqui irian las imagenes con sus respectivos <img> tag -->
+<!-- Seleccion de Contacto tambien se modifica el box -->
 
-        <!-- p
-        <img src="imagen1.png" alt="Obra de arte 1">
-        <img src="imagen2.png" alt="Obra de arte 2">
-        <img src="imagen3.png" alt="Obra de arte 3">
-        <img src="imagen4.png" alt="Obra de arte 4">
-        <img src="imagen5.png" alt="Obra de arte 5">
-        <img src="imagen6.png" alt="Obra de arte 6">
-        <img src="imagen7.png" alt="Obra de arte 7">
-        <img src="imagen8.png" alt="Obra de arte 8">
-        <img src="imagen9.png" alt="Obra de arte 9">
-        <img src="imagen10.png" alt="Obra de arte 10">
-        Agrega más imágenes según sea necesario -->
-        </div>
-    </div>
+<div id="contacto" class="section container">
+    <h2>Contacto</h2>
+    <form class="contact-form">
+        <input id="nombre" type="text" placeholder="Nombre">
+        <input type="email" placeholder="Correo electrónico">
+        <textarea placeholder="Tu mensaje"></textarea>
 
-        <!-- Seleccion de Contacto tambien se modifica el box -->
-
-        <div id="contacto" class="section container">
-            <h2>Contacto</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Nombre">
-                <input type="email" placeholder="Correo electrónico">
-                <textarea placeholder="Tu mensaje"></textarea>
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-        </div>
+        <button type="button" onclick="enviarInicio()">Enviar</button>
+    </form>
+</div>
 
 
 <script>
 
-            // Funcion para mostrar la seccion seleccionada y oculta las demas
-            function showSection(sectionId) {
-                //Ocultar todas las secciones
-                var sections = document.querySelectorAll('.section');
-                sections.forEach(function(section) {
-                    section.style.display = 'none';
-                });
-                //Mostrar la seccion seleccionada
-                document.getElementById(sectionId).style.display = 'block';
-            }
+    function enviarInicio (){
+        alert('Mensaje Enviado!')
+        showSection('inicio');
 
-            // Mostrar la seccion de inicio por defecto al cargar la pagina
-            window.onload = function() {
-                showSection('inicio');
-            };
 
-        </script>
+    }
+
+    // Funcion para mostrar la seccion seleccionada y oculta las demas
+    function showSection(sectionId) {
+        //Ocultar todas las secciones
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(function(section) {
+            section.style.display = 'none';
+        });
+        //Mostrar la seccion seleccionada
+        document.getElementById(sectionId).style.display = 'block';
+    }
+
+    // Mostrar la seccion de inicio por defecto al cargar la pagina
+    window.onload = function() {
+        showSection('inicio');
+    };
+
+</script>
 
 </body>
 </html>
